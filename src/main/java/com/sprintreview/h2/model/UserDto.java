@@ -19,17 +19,17 @@ public class UserDto implements Serializable {
     private String age;
     private String email;
     @Column(name = "date_birth")
-    private LocalDate dateBird;
+    private LocalDate dateBirth;
 
     public UserDto() {
     }
 
-    public UserDto(String name, String lastName, String age, String email, LocalDate dateBird) {
+    public UserDto(String name, String lastName, String age, String email, LocalDate dateBirth) {
         this.name = name;
         this.lastName = lastName;
         this.age = age;
         this.email = email;
-        this.dateBird = dateBird;
+        this.dateBirth = dateBirth;
     }
 
     public Long getIdUser() {
@@ -72,12 +72,12 @@ public class UserDto implements Serializable {
         this.email = email;
     }
 
-    public LocalDate getDateBird() {
-        return dateBird;
+    public LocalDate getDateBirth() {
+        return dateBirth;
     }
 
-    public void setDateBird(LocalDate dateBird) {
-        this.dateBird = dateBird;
+    public void setDateBirth(LocalDate dateBirth) {
+        this.dateBirth = dateBirth;
     }
 
     @Override
@@ -88,7 +88,7 @@ public class UserDto implements Serializable {
                 ", lastName='" + lastName + '\'' +
                 ", age='" + age + '\'' +
                 ", email='" + email + '\'' +
-                ", dateBird=" + dateBird +
+                ", dateBird=" + dateBirth +
                 '}';
     }
 }

@@ -36,11 +36,21 @@ public class UserController {
     }
     @PutMapping("/{id}")
     public ResponseEntity updateUser(@PathVariable("id") Long idUser, @RequestBody UserDto userDto){
-        return new ResponseEntity(HttpStatus.OK);
+        boolean isUpdated = userService.updateUser(idUser, userDto);
+        if (isUpdated){
+            return new ResponseEntity(HttpStatus.OK);
+        }else{
+            return new ResponseEntity(HttpStatus.NOT_FOUND);
+        }
     }
     @DeleteMapping("/{id}")
     public ResponseEntity deleteUser(@PathVariable("id") Long idUser){
-        return new ResponseEntity(HttpStatus.OK);
+        boolean isDelete = userService.deleteUser(idUser);
+        if (isDelete){
+            return new ResponseEntity(HttpStatus.OK);
+        }else{
+            return new ResponseEntity(HttpStatus.NOT_FOUND);
+        }
     }
 
 }

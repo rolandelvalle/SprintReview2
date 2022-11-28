@@ -38,7 +38,7 @@ public class UserRepositoryImpl implements UserRepositoryDao{
             userFound.setLastName(userDto.getLastName());
             userFound.setAge(userDto.getAge());
             userFound.setEmail(userDto.getEmail());
-            userFound.setDateBird(userDto.getDateBird());
+            userFound.setDateBirth(userDto.getDateBirth());
             userCrudRepository.save(userFound);
             return true;
         }else{
